@@ -40,9 +40,10 @@ namespace OrderService
             client =>
             {
                 client.BaseAddress = new Uri("http://localhost:5000/");
-            }).AddCircutiBreaker();
+            });
 
             services.Configure<OrdersSettings>(Configuration);
+            services.AddSingleton<IPolicyManager,PolicyManager>();
             services.AddScoped<IOrdersService, OrdersService>();
         }
 
