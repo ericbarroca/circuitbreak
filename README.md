@@ -19,7 +19,7 @@ This repository contains the **main** and **the http-client-implementation** bra
 The first one contains the main directions and explanations about this project. 
 The **the http-client-implementation** contains the code implementation for the **Circuit Break Policy on one HttpClient**.
 
-## The http-client-implementation branch
+## The policy-manager-implementation branch
 
 This branch contains 2 aspnet core applications **(User Service and Order Service)**. Both present the hierarchy below:
 * **Controllers**: The controllers of the application.
@@ -27,7 +27,9 @@ This branch contains 2 aspnet core applications **(User Service and Order Servic
 * **Models**: Data Models.
 * **Settings**: Mock for Input Data through appsettings.Development.json.
 
-The **Circuit Break** implementation is presented on the `PolyExtensions.cs` file on the Order Service application. It is a policy that implements a Circuit Break that reaches open state after two connection errors, and stays in that state for 1 minute.
+The **Circuit Break** implementation is presented on the `PolicyManager.cs` file on the Order Service application. It is a policy that implements a Circuit Break that reaches open state after two connection errors, and stays in that state for 1 minute.
+
+The diference between this implementation and the one on the other branch is that now the policy is managed by our manager and can be used with functional composition, as shown on the `OrderService.cs`.
 
 To test the Circuit Break Implementation debug the Order Service application alone and try to access the endpoint `http://domain:port/order/1`. After two tries you should see on your Debug Console a log similar to the one bellow:
 
