@@ -15,6 +15,7 @@ More details about the benefits and challenges of this implementation can be fou
 
 ## This Repo
 
-This repository contains the **main** and **the http-client-implementation** branches. 
+This repository contains the **main**, **the http-client-implementation** and **policy-manager-implementation** branches. 
 The first one contains the main directions and explanations about this project. 
 The **the http-client-implementation** contains the code implementation for the **Circuit Break Policy on one HttpClient**.
+The **the policy-manager-implementation** contains the code implementation for the **Circuit Break Policy Manager**.
